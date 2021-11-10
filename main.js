@@ -1,4 +1,17 @@
 const container = document.getElementById('cardContainer');
+const btn = document.getElementById("buttonProfileCards");
+container.style.display = "none";
+btn.onclick = function () {
+  if (container.style.display !== "none") {
+    container.style.display = "none";
+    btn.innerHTML="show Profile Cards"
+  } else {
+    container.style.display = "block";
+    btn.innerHTML="hide Profile Cards"
+
+  }
+};
+
 
 fetch("https://jsonplaceholder.typicode.com/users")
   .then((response) => {
