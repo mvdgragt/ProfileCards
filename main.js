@@ -13,14 +13,27 @@ btn.onclick = function () {
 };
 
 
-fetch("https://jsonplaceholder.typicode.com/users")
-  .then((response) => {
-    console.log(response);
-    return response.json();
-  })
-  .then((data) => {
+  let getUsers = async () => {
+  
+    let response = await fetch("https://jsonplaceholder.typicode.com/users");
+    let data = await response.json();
+    console.log(data);
+
+  data.forEach((obj) => {
+  
+
+
+// fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((response) => {
+//     console.log(response);
+//     return response.json();
+//   })
+//   .then((data) => {
     
-    data.forEach((obj) => {
+//     data.forEach((obj) => {
+
+    
+
 
       // Create card element
   const card = document.createElement('div');
@@ -49,5 +62,8 @@ fetch("https://jsonplaceholder.typicode.com/users")
  </div>
  `;
  container.innerHTML += content;
-    });
-  });
+  
+});
+};
+
+getUsers();
